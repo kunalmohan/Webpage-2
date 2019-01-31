@@ -4,6 +4,7 @@
 	<title>ImpulseDesignStudio</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="top" id="home">
@@ -191,9 +192,7 @@
 			<input id="mail" type="submit" value="SEND EMAIL">
 		</form>
 	</div>
-	<div class="section6">
-		
-	</div>
+	<button id="gotop" onclick="scrollUp()"><i class="fa fa-arrow-up"></i></button>
 	<div class="footer">
 		<div class="hd7">
 			Follow Us
@@ -225,5 +224,36 @@
 			Copyright &copy; 2084 Company Name | Design: <span>template mo</span>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function debounce(func, wait = 20, immediate = true) {
+    	  var timeout;
+    	  return function() {
+    	    var context = this, args = arguments;
+    	    var later = function() {
+    	      timeout = null;
+    	      if (!immediate) func.apply(context, args);
+    	    };
+    	    var callNow = immediate && !timeout;
+    	    clearTimeout(timeout);
+    	    timeout = setTimeout(later, wait);
+    	    if (callNow) func.apply(context, args);
+    	  };
+		};
+
+		function checkScroll(){
+			if(window.scrollY >= 600){
+				gotop.style.display= "block";
+			}
+			else gotop.style.display= "none";
+		}
+
+		function scrollUp(){
+			window.scrollTo(0,0);
+		}
+	
+		const gotop = document.getElementById('gotop');
+		window.addEventListener('scroll', debounce(checkScroll));
+
+	</script>
 </body>
 </html>

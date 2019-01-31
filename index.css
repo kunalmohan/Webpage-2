@@ -1,6 +1,7 @@
 *{
 	margin: 0px;
 	font-family: sans-serif;
+	scroll-behavior: smooth;
 }
 
 .top{
@@ -503,7 +504,7 @@ hr{
 
 .icons{
 	display: flex;
-	width: 32%;
+	width: 33%;
 	min-width: 350px;
 	justify-content: space-between;
 	margin: auto;
@@ -525,6 +526,24 @@ hr{
 
 .foot span{
 	color: #EA612D;
+}
+
+#gotop{
+	position: fixed;
+	display: none;
+	font-size: 25px;
+	padding: 0.7em;
+	background-color: blue;
+	border: none;
+	border-radius: 100px;
+	color: white;
+	bottom: 50px;
+	right: 50px;
+	z-index: 1;
+	box-shadow: 0 0 12px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+	-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+	-o-box-shadow: 0 0 12px rgba(0,0,0,0.8);
 }
 
 @media screen and (max-width: 800px){
@@ -686,5 +705,10 @@ hr{
 .drop a:hover{
 	background-color: #E5E3E3;
 	transition-duration: 0.5s;
+}
+
+#gotop{
+	bottom: 25px;
+	right: 25px;
 }
 }

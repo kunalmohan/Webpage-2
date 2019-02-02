@@ -120,6 +120,11 @@ html{
 	border-radius: 4px;
 }
 
+#start:hover{
+	background-color: #FC7111;
+	transform: scale(1.05);
+}
+
 .bar{
 	height: 3vw;
 	margin-bottom: 8px;
@@ -505,6 +510,12 @@ hr{
 	height: 45px;
 }
 
+.p13 input:hover{
+	background-color: #F5F4F4;
+	border: 2px gray;
+	border-style: ridge;
+}
+
 .section5{
 	background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.8)), url("images/back3.jpg");
 	background-attachment: fixed;
@@ -565,6 +576,11 @@ hr{
 	background-color: #EA612D;
 	color: white;
 	height: 3.3em;
+}
+
+#mail:hover{
+	background-color: #FC7111;
+	transform: scale(1.05);
 }
 
 .footer{

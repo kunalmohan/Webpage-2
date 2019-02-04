@@ -437,7 +437,7 @@ hr{
 	height: 500px;
 	display: none;
 	max-width: 100%;
-	transform: translateY(10px);
+	transform: translateY(8px);
 }
 
 .pic {

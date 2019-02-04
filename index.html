@@ -134,6 +134,24 @@
 				<div><img src="images/work8.jpg"></div>
 			</div>
 		</div>
+		<div id="my-carousel">
+			<div id="left-arrow"><i class="fa fa-angle-left"></i></div>
+			<div id="carousel-pics">
+				<img class="pic fade" id="carousel1" src="images/carousel1.png">
+				<img class="pic fade" id="carousel2" src="images/carousel2.jpeg">
+				<img class="pic fade" id="carousel3" src="images/carousel3.jpg">
+				<img class="pic fade" id="carousel4" src="images/carousel4.png">
+				<img class="pic fade" id="carousel5" src="images/carousel5.png">
+				<div class="dots">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+			<div id="right-arrow"><i class="fa fa-angle-right"></i></div>
+		</div>
 		<div class="section4" id="price">
 			<div class="plan1">
 				<div class="hd5">Our Plans</div><br>
@@ -274,6 +292,57 @@
 		window.onload = function(){
 			windowLoaded();
 		};
+
+		const pics = document.getElementsByClassName('pic');
+		const dots = document.getElementsByClassName('dot');
+		const nextimg = document.getElementById('right-arrow');
+		const previmg = document.getElementById('left-arrow');
+
+		nextimg.style.display = 'none';
+		previmg.style.display = 'none';
+
+		let i=0;
+		let nopics = pics.length;
+		var picControl;
+
+		pics[0].style.display = 'block';
+		dots[0].style.opacity = '1';
+
+		function picShow(){
+			if(i == 0){
+				pics[nopics-1].style.display = 'none';
+				dots[nopics-1].style.opacity = '0.4';
+			}
+			else{
+				pics[i-1].style.display = 'none';
+				dots[i-1].style.opacity = '0.4';
+			}
+			pics[i].style.display = 'block';
+			dots[i].style.opacity = '1';
+			i++;
+			if(i == nopics) i=0;
+			picControl = setTimeout(picShow, 2000);
+		}
+
+		picControl = setTimeout(picShow, 2000);
+
+		/*nextimg.addEventListener('click', () => {
+			clearTimeout(picControl);
+			pics[i].style.display = 'none';
+			i++;
+			if(i == nopics) i=0;
+			pics[i].style.display = 'block';
+			picShow();
+		});
+
+		previmg.addEventListener('click', () => {
+			clearTimeout(picControl);
+			pics[i].style.display = 'none';
+			i--;
+			if(i == -1) i = nopics-1;
+			pics[i].style.display = 'block';
+			picshow();
+		});*/
 	
 		const gotop = document.getElementById('gotop');
 		window.addEventListener('scroll', debounce(checkScroll));
